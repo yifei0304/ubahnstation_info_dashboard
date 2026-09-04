@@ -6,10 +6,6 @@
 
 A CPEE-driven web application that displays real-time public transport departures, walking time, and service alerts for any Munich MVG station. The dashboard is configured entirely through CPEE Data Objects — no code changes needed to switch stations or locations.
 
-Live dashboard: https://cpee.org/out/frames/yifei/
-
-GitHub: https://github.com/yifei0304/ubahnstation_info_dashboard
-
 Server: https://lehre.bpm.in.tum.de/~go93dib/
 
 ---
