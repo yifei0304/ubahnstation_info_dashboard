@@ -16,13 +16,7 @@ Server: https://lehre.bpm.in.tum.de/~go93dib/
 
 
 
-
-https://github.com/user-attachments/assets/8a80d004-2999-4f8d-9cc1-f896510c682d
-
-
-
-https://github.com/user-attachments/assets/bd564452-2c7c-4087-8123-76abc5896684
-
+https://github.com/user-attachments/assets/3e42913c-be3c-4c26-9369-6933ed760e60
 
 
 
