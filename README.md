@@ -1,3 +1,7 @@
+
+
+
+
 # ubahnstation_info_dashboard
 
 A CPEE-driven web application that displays real-time public transport departures, walking time, and service alerts for any Munich MVG station. The dashboard is configured entirely through CPEE Data Objects — no code changes needed to switch stations or locations.
@@ -19,6 +23,8 @@ Server: https://lehre.bpm.in.tum.de/~go93dib/
 https://github.com/user-attachments/assets/3e42913c-be3c-4c26-9369-6933ed760e60
 
 
+
+https://github.com/user-attachments/assets/7a3db71a-ddfe-4094-b34a-3f243c207255
 
 ---
 
