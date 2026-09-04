@@ -14,6 +14,18 @@ Server: https://lehre.bpm.in.tum.de/~go93dib/
 
 **Main dashboard showing U-Bahn and Bus departures, walking time, and service alerts**
 
+
+
+
+https://github.com/user-attachments/assets/8a80d004-2999-4f8d-9cc1-f896510c682d
+
+
+
+https://github.com/user-attachments/assets/bd564452-2c7c-4087-8123-76abc5896684
+
+
+
+
 ---
 
 ## System Overview
