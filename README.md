@@ -191,16 +191,6 @@ The Google API key is stored only in `service.py` on the server and is never exp
 
 ---
 
-## Possible Improvements
-
-- **Remove service.py** — if a future CPEE version supports custom POST headers natively, the `/route` proxy can be eliminated entirely
-- **Station search UI** — allow users to type a station name and reconfigure the workflow without editing Data Objects
-- **Occupancy display** — MVG returns `occupancy` (LOW/MEDIUM/HIGH) per departure, which could be shown as a coloured indicator on each card
-- **Multiple stations** — extend the dashboard to show departures for more than one station simultaneously
-- **Dark mode** — add a CSS toggle for use in low-light or public display environments
-
----
-
 ## About
 
 Built as part of the Practical Course SS26 at i17 — Lehrstuhl für Wirtschaftsinformatik und Geschäftsprozessmanagement, TUM.
