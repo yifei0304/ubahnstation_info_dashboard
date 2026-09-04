@@ -1,0 +1,833 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements>
+    <currentlocation>Odeonplaz 1 München</currentlocation>
+    <station>de:09162:2</station>
+    <station_name>Marienplatz(U)</station_name>
+    <key>AIzaSyCr1iEGScMOIg1OiMr49FoFvWw12pYalUw</key>
+  </dataelements>
+  <documents/>
+  <endpoints>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <init>https-post://cpee.org/out/frames/</init>
+    <display>https-put://cpee.org/out/frames/</display>
+    <mvg_departures>https://www.mvg.de/api/bgw-pt/v3/departures</mvg_departures>
+    <mvg_messages>https://www.mvg.de/api/bgw-pt/v3/messages</mvg_messages>
+    <geocode>https://maps.googleapis.com/maps/api/geocode/json</geocode>
+    <route>https://lehre.bpm.in.tum.de/ports/8081/route</route>
+  </endpoints>
+  <attributes>
+    <info>Final_Stantion_Dashboard</info>
+    <guarded>none</guarded>
+    <modeltype>CPEE</modeltype>
+    <theme>extended</theme>
+    <guarded_id/>
+    <creator>Christine Ashcreek</creator>
+    <author>Christine Ashcreek</author>
+    <model_uuid>4941e519-32fb-4e66-a167-f3add4ea9082</model_uuid>
+    <model_version/>
+    <design_dir>Teaching.dir/Prak.dir/TUM-Prak-26-SS.dir/FuYifei.dir/</design_dir>
+    <design_stage>development</design_stage>
+    <frames_id>yifei</frames_id>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <call id="a1" endpoint="init">
+        <parameters>
+          <label>Init</label>
+          <color/>
+          <arguments>
+            <style_url>https://cpee.org/form/frames.css</style_url>
+            <document_url/>
+            <x_amount>15</x_amount>
+            <y_amount>15</y_amount>
+            <lang>de-at</lang>
+            <document_name>Ubahn Information Dashboard</document_name>
+          </arguments>
+        </parameters>
+        <code>
+          <signal>false</signal>
+          <prepare>endpoints.init += attributes.frames_id
+data.timeout = Time.now.to_i</prepare>
+          <finalize output="result"/>
+          <update output="result"/>
+          <rescue output="result"/>
+        </code>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+          <code>
+            <description/>
+          </code>
+        </documentation>
+      </call>
+      <call id="a7" endpoint="display">
+        <parameters>
+          <label>Clear</label>
+          <color/>
+          <arguments>
+            <type>set</type>
+            <lx>0</lx>
+            <ly>1</ly>
+            <x_amount>15</x_amount>
+            <y_amount>14</y_amount>
+            <urls/>
+            <default/>
+          </arguments>
+        </parameters>
+        <code>
+          <signal>false</signal>
+          <prepare>endpoints.display += attributes.frames_id</prepare>
+          <finalize output="result"/>
+          <update output="result"/>
+          <rescue output="result"/>
+        </code>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+          <code>
+            <description/>
+          </code>
+        </documentation>
+      </call>
+      <call id="a11" endpoint="display">
+        <parameters>
+          <label>Show Header</label>
+          <color/>
+          <arguments>
+            <type>set</type>
+            <lx>0</lx>
+            <ly>0</ly>
+            <x_amount>15</x_amount>
+            <y_amount>1</y_amount>
+            <urls>
+              <urls_item>
+                <lang>de-at</lang>
+                <url>https://cpee.org/form/tum-header.html</url>
+              </urls_item>
+            </urls>
+            <default/>
+          </arguments>
+        </parameters>
+        <code>
+          <signal>false</signal>
+          <prepare>endpoints.display += attributes.frames_id</prepare>
+          <finalize output="result"/>
+          <update output="result"/>
+          <rescue output="result"/>
+        </code>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+          <code>
+            <description/>
+          </code>
+        </documentation>
+      </call>
+      <parallel eid="e2" wait="-1" cancel="last">
+        <parallel_branch>
+          <call id="a2" endpoint="geocode">
+            <parameters>
+              <label>Get coordination current</label>
+              <color/>
+              <method>:get</method>
+              <arguments>
+                <key>!data.key</key>
+                <address>!data.currentlocation</address>
+              </arguments>
+            </parameters>
+            <code>
+              <signal>false</signal>
+              <prepare/>
+              <finalize output="result">data.coordination_current = result['results'][0]['geometry']['location']</finalize>
+              <update output="result"/>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+          <call id="a14" endpoint="geocode">
+            <parameters>
+              <label>Get coordination station</label>
+              <color/>
+              <method>:get</method>
+              <arguments>
+                <address>!data.station_name</address>
+                <key>!data.key</key>
+              </arguments>
+            </parameters>
+            <code>
+              <signal>false</signal>
+              <prepare/>
+              <finalize output="result">data.coordination_station = result['results'][0]['geometry']['location']</finalize>
+              <update output="result"/>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+          <call id="a22" endpoint="route">
+            <parameters>
+              <label>Calculate the walking time</label>
+              <color/>
+              <method>:get</method>
+              <arguments>
+                <olat>!data.coordination_current['lat']</olat>
+                <olng>!data.coordination_current['lng']</olng>
+                <dlat>!data.coordination_station['lat']</dlat>
+                <dlng>!data.coordination_station['lng']</dlng>
+              </arguments>
+            </parameters>
+            <code>
+              <signal>false</signal>
+              <prepare/>
+              <finalize output="result">data.walking = result
+data.walking_minute = data.walking['duration'].to_i / 60</finalize>
+              <update output="result"/>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+          <call id="a32" endpoint="mvg_departures">
+            <parameters>
+              <label>Get Departure</label>
+              <color/>
+              <method>:get</method>
+              <arguments>
+                <globalId>!data.station</globalId>
+                <limit>50</limit>
+                <offsetInMinutes>0</offsetInMinutes>
+                <transportTypes>UBAHN,BUS,REGIONAL_BUS</transportTypes>
+              </arguments>
+            </parameters>
+            <code>
+              <signal>false</signal>
+              <prepare/>
+              <finalize output="result">deps = result
+
+now = Time.now.to_i * 1000
+data.ubahn = deps.select{|d| 
+  d['transportType'] == 'UBAHN' &amp;&amp; !d['cancelled'] &amp;&amp;
+  (d['realtimeDepartureTime'] || d['plannedDepartureTime']) &gt; now - 30000
+}.first(4)
+data.bus = deps.select{|d|
+  ['BUS','REGIONAL_BUS'].include?(d['transportType']) &amp;&amp; !d['cancelled'] &amp;&amp;
+  (d['realtimeDepartureTime'] || d['plannedDepartureTime']) &gt; now - 30000
+}.first(4)
+data.messages = deps.flat_map{|d| d['messages'] || []}.uniq.first(3)</finalize>
+              <update output="result"/>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+          <call id="a6" endpoint="mvg_messages">
+            <parameters>
+              <label>Get messages</label>
+              <color/>
+              <method>:get</method>
+              <arguments/>
+            </parameters>
+            <code>
+              <signal>false</signal>
+              <prepare/>
+              <finalize output="result">all_msgs = result.is_a?(Array) ? result : []
+station_lines = (data.ubahn + data.bus).map{|d| d['label']}.uniq
+data.debug_lines = station_lines
+data.messages = all_msgs.select{|m|
+  lines = m['lines'] || []
+  lines.empty? || lines.any?{|l| station_lines.include?(l['label'])}
+}.first(3)</finalize>
+              <update output="result"/>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a22" endpoint="display">
+        <parameters>
+          <label>show Overview</label>
+          <color/>
+          <arguments>
+            <type>set</type>
+            <lx>0</lx>
+            <ly>1</ly>
+            <x_amount>15</x_amount>
+            <y_amount>14</y_amount>
+            <urls>
+              <urls_item>
+                <lang>de-at</lang>
+                <url>https://lehre.bpm.in.tum.de/~go93dib/demo111.html</url>
+              </urls_item>
+            </urls>
+            <default>
+              <station>!data.station_name</station>
+              <currentlocation>!data.currentlocation</currentlocation>
+              <bus>!data.bus</bus>
+              <ubahn>!data.ubahn</ubahn>
+              <messages>!data.messages</messages>
+              <walkingtime>!data.walking_minute</walkingtime>
+            </default>
+          </arguments>
+        </parameters>
+        <code>
+          <signal>false</signal>
+          <prepare>endpoints.display += attributes.frames_id</prepare>
+          <finalize output="result"/>
+          <update output="result"/>
+          <rescue output="result"/>
+        </code>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+          <code>
+            <description/>
+          </code>
+        </documentation>
+      </call>
+      <loop eid="e1" mode="pre_test" condition="true">
+        <_probability>
+          <_probability_min/>
+          <_probability_max/>
+          <_probability_avg/>
+        </_probability>
+        <_annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_iteration>false</_iteration>
+          </_logging_behavior>
+        </_annotations>
+        <call id="a231" endpoint="mvg_departures">
+          <parameters>
+            <label>Get Departure</label>
+            <color/>
+            <method>:get</method>
+            <arguments>
+              <globalId>!data.station</globalId>
+              <limit>50</limit>
+              <offsetInMinutes>0</offsetInMinutes>
+              <transportTypes>UBAHN,BUS,REGIONAL_BUS</transportTypes>
+            </arguments>
+          </parameters>
+          <code>
+            <signal>false</signal>
+            <prepare/>
+            <finalize output="result">deps = result
+
+now = Time.now.to_i * 1000
+data.ubahn = deps.select{|d| 
+  d['transportType'] == 'UBAHN' &amp;&amp; !d['cancelled'] &amp;&amp;
+  (d['realtimeDepartureTime'] || d['plannedDepartureTime']) &gt; now - 30000
+}.first(4)
+data.bus = deps.select{|d|
+  ['BUS','REGIONAL_BUS'].include?(d['transportType']) &amp;&amp; !d['cancelled'] &amp;&amp;
+  (d['realtimeDepartureTime'] || d['plannedDepartureTime']) &gt; now - 30000
+}.first(4)
+data.messages = deps.flat_map{|d| d['messages'] || []}.uniq.first(3)</finalize>
+            <update output="result"/>
+            <rescue output="result"/>
+          </code>
+          <annotations>
+            <_generic/>
+            <_logging_behavior>
+              <_exclude>false</_exclude>
+              <_include>false</_include>
+            </_logging_behavior>
+            <_timing>
+              <_timing_weight/>
+              <_timing_avg/>
+              <explanations/>
+            </_timing>
+            <_shifting>
+              <_shifting_type>Duration</_shifting_type>
+            </_shifting>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <_notes>
+              <_notes_general/>
+            </_notes>
+          </annotations>
+          <documentation>
+            <input/>
+            <output/>
+            <implementation>
+              <description/>
+            </implementation>
+            <code>
+              <description/>
+            </code>
+          </documentation>
+        </call>
+        <call id="a35" endpoint="mvg_messages">
+          <parameters>
+            <label>Get messages</label>
+            <color/>
+            <method>:get</method>
+            <arguments/>
+          </parameters>
+          <code>
+            <signal>false</signal>
+            <prepare/>
+            <finalize output="result">all_msgs = result.is_a?(Array) ? result : []
+
+station_lines = (data.ubahn + data.bus).map{|d| d['label']}.uniq
+data.debug_lines = station_lines
+data.messages = all_msgs.select{|m|
+  lines = m['lines'] || []
+  lines.empty? || lines.any?{|l| station_lines.include?(l['label'])}
+}.first(3)</finalize>
+            <update output="result"/>
+            <rescue output="result"/>
+          </code>
+          <annotations>
+            <_generic/>
+            <_logging_behavior>
+              <_exclude>false</_exclude>
+              <_include>false</_include>
+            </_logging_behavior>
+            <_timing>
+              <_timing_weight/>
+              <_timing_avg/>
+              <explanations/>
+            </_timing>
+            <_shifting>
+              <_shifting_type>Duration</_shifting_type>
+            </_shifting>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <_notes>
+              <_notes_general/>
+            </_notes>
+          </annotations>
+          <documentation>
+            <input/>
+            <output/>
+            <implementation>
+              <description/>
+            </implementation>
+            <code>
+              <description/>
+            </code>
+          </documentation>
+        </call>
+        <call id="a23" endpoint="display">
+          <parameters>
+            <label>show Overview</label>
+            <color/>
+            <arguments>
+              <type>set</type>
+              <lx>0</lx>
+              <ly>1</ly>
+              <x_amount>15</x_amount>
+              <y_amount>14</y_amount>
+              <urls>
+                <urls_item>
+                  <lang>de-at</lang>
+                  <url>https://lehre.bpm.in.tum.de/~go93dib/demo111.html</url>
+                </urls_item>
+              </urls>
+              <default>
+                <station>!data.station_name</station>
+                <currentlocation>!data.currentlocation</currentlocation>
+                <bus>!data.bus</bus>
+                <ubahn>!data.ubahn</ubahn>
+                <messages>!data.messages</messages>
+                <walkingtime>!data.walking_minute</walkingtime>
+              </default>
+            </arguments>
+          </parameters>
+          <code>
+            <signal>false</signal>
+            <prepare>endpoints.display += attributes.frames_id</prepare>
+            <finalize output="result"/>
+            <update output="result"/>
+            <rescue output="result"/>
+          </code>
+          <annotations>
+            <_generic/>
+            <_logging_behavior>
+              <_exclude>false</_exclude>
+              <_include>false</_include>
+            </_logging_behavior>
+            <_timing>
+              <_timing_weight/>
+              <_timing_avg/>
+              <explanations/>
+            </_timing>
+            <_shifting>
+              <_shifting_type>Duration</_shifting_type>
+            </_shifting>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <_notes>
+              <_notes_general/>
+            </_notes>
+          </annotations>
+          <documentation>
+            <input/>
+            <output/>
+            <implementation>
+              <description/>
+            </implementation>
+            <code>
+              <description/>
+            </code>
+          </documentation>
+        </call>
+        <call id="a3" endpoint="timeout">
+          <parameters>
+            <label/>
+            <color/>
+            <arguments>
+              <timeout>15</timeout>
+              <data/>
+            </arguments>
+          </parameters>
+          <code>
+            <signal>false</signal>
+            <prepare/>
+            <finalize output="result"/>
+            <update output="result"/>
+            <rescue output="result"/>
+          </code>
+          <annotations>
+            <_generic/>
+            <_logging_behavior>
+              <_exclude>false</_exclude>
+              <_include>false</_include>
+            </_logging_behavior>
+            <_timing>
+              <_timing_weight/>
+              <_timing_avg/>
+              <explanations/>
+            </_timing>
+            <_shifting>
+              <_shifting_type>Duration</_shifting_type>
+            </_shifting>
+            <_context_data_analysis>
+              <probes/>
+              <ips/>
+            </_context_data_analysis>
+            <report>
+              <url/>
+            </report>
+            <_notes>
+              <_notes_general/>
+            </_notes>
+          </annotations>
+          <documentation>
+            <input/>
+            <output/>
+            <implementation>
+              <description/>
+            </implementation>
+            <code>
+              <description/>
+            </code>
+          </documentation>
+        </call>
+      </loop>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>
